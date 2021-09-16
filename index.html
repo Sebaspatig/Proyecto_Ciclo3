@@ -14,7 +14,20 @@
 <body>
 
     
-    <form action="" id="form-registro">
+    <form action="" id="form-registro" action="registro.html" method="post">
+        <h3>Registro</h3>
+    
+        <label for="pregunta">Tipo de documento</label><br>
+        <select id="tdocumento" name="tdocumento">
+            <option value="cedula">Cedula de ciudadania</option>
+            <option value="taridentidad">Tarjeta de identidad</option>
+            <option value="regcivil">Registro civil</option>
+            <option value="cedulaextra">Cedula de extranjeria</option>
+            <option value="pasaporte">Pasaporte</option>
+        </select>
+        
+        <label for="numerodocumento">Número de documento</label><br>
+        <input type="text" name="numerodocumento" id="numerodocumento" size="19" placeholder="1000000000"><br>
         <div>
             <label for="correo">Correo</label>
             <input type="email" name="correo" id="correo">
