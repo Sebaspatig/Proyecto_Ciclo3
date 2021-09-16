@@ -1,0 +1,232 @@
+/* 
+    TITULOS font-family: 'Source Sans Pro', sans-serif; 
+    CUERPO font-family: 'Poppins', sans-serif;
+*/
+
+* {
+	font-family: "Poppins", sans-serif;
+	font-weight: 300;
+
+	/* Reset CSS */
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	/* Paleta de colores */
+	--encabezado: #00334e;
+	--color-texto-dark: #145374;
+	--color-texto-light: #5588a3;
+	--color-gris: #e8e8e8;
+}
+
+/*----------------- ESTILOS GENERALES -----------------*/
+
+/* Estilo container */
+.container {
+	min-height: 100vh;
+	/* overflow: hidden; */
+}
+
+/* Estilos para el encabezado de la pagina */
+.encabezado {
+	background-color: var(--encabezado);
+	color: var(--color-gris);
+	/* Estructura */
+	min-height: 100px;
+}
+.encabezado__logo {
+	height: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.encabezado__title {
+	font-size: 30px;
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: 600;
+	/* text-align: center; */
+}
+
+.encabezado__subtitle {
+	font-size: 10px;
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: 600;
+	text-align: center;
+}
+
+.encabezado__imagen {
+	height: 100px;
+}
+
+/* Estilos para el contenedor del cuerpo de la pagina */
+.section {
+	width: 100%;
+}
+/* Estilos para el Formulario */
+.formulario {
+	padding: 20px;
+	height: 80%;
+}
+
+/* Estilos footer */
+.footer {
+	padding: 20px;
+	background-color: var(--color-gris);
+	height: auto;
+}
+.footer__title {
+	font-weight: 400;
+	color: var(--color-texto-dark);
+}
+.footer__icon {
+	margin-right: 5px;
+}
+
+.footer__acerca {
+	margin-bottom: 10px;
+}
+
+/*----------------- ESTILOS RESPONSIVE -----------------*/
+
+.container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+.encabezado,
+.formulario,
+.footer,
+.section {
+	width: 100%;
+}
+
+/* Estilos para Tablets */
+@media only screen and (min-width: 580px) {
+	.formulario {
+		width: 85%;
+		padding: 25px 0;
+		margin: 0 auto 20px auto;
+	}
+}
+
+/* Estilos para Tablets */
+@media only screen and (min-width: 768px) {
+	.encabezado {
+		width: 25%;
+	}
+	.encabezado__logo {
+		height: 100%;
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: column;
+		padding: px 0;
+	}
+	.encabezado__title {
+		font-size: 30px;
+		font-family: "Source Sans Pro", sans-serif;
+		font-weight: 600;
+		padding: 0px 15px;
+		text-align: center;
+		/* text-align: center; */
+	}
+
+	.encabezado__subtitle {
+		padding: 0px 15px;
+		text-align: center;
+		/* text-align: center; */
+	}
+
+	.section {
+		width: 75%;
+	}
+
+	.footer {
+		display: flex;
+		padding-bottom: 3px;
+	}
+	.footer__acerca {
+		width: 50%;
+	}
+	.footer__contacto {
+		width: 45%;
+	}
+	.footer__texto-acerca {
+		font-size: 14px;
+	}
+}
+
+/* Estilos para Tablets vertical*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+	.container {
+		min-height: 100vh;
+	}
+
+	.encabezado {
+		width: 25%;
+	}
+	.section {
+		width: 75%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.footer {
+		align-self: flex-end;
+		width: 100%;
+	}
+	.footer__acerca {
+		width: 50%;
+	}
+	.footer__contacto {
+		width: 45%;
+	}
+	.footer__texto-acerca {
+		font-size: 14px;
+	}
+}
+
+/* Estilos para Medium-Desktops */
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+	.encabezado {
+		width: 30%;
+	}
+
+	.encabezado__imagen {
+		height: 250px;
+	}
+
+	.encabezado__title {
+		font-size: 50px;
+		font-family: "Source Sans Pro", sans-serif;
+		font-weight: 600;
+		padding: 0px 15px;
+		text-align: center;
+		/* text-align: center; */
+	}
+
+	.encabezado__subtitle {
+		font-size: 30px;
+		padding: 0px 15px;
+		text-align: center;
+		/* text-align: center; */
+	}
+
+	.section {
+		width: 70%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.footer {
+		align-self: flex-end;
+		width: 100%;
+	}
+}
+
+/* Estilos para Large-Desktops */
+@media only screen and (min-width: 1680px) and (orientation: landscape) {
+}
