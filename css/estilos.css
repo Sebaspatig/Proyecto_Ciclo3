@@ -24,7 +24,7 @@
 /*----------------- ESTILOS GENERALES -----------------*/
 
 /* Estilo container */
-.container {
+.container{
 	min-height: 100vh;
 	/* overflow: hidden; */
 }
@@ -49,25 +49,72 @@
 	/* text-align: center; */
 }
 
-.encabezado__subtitle {
+.encabezado__subtitle{
 	font-size: 10px;
 	font-family: "Source Sans Pro", sans-serif;
 	font-weight: 600;
 	text-align: center;
 }
 
-.encabezado__imagen {
+.encabezado__imagen{
 	height: 100px;
 }
 
 /* Estilos para el contenedor del cuerpo de la pagina */
 .section {
 	width: 100%;
+
 }
 /* Estilos para el Formulario */
 .formulario {
 	padding: 20px;
 	height: 80%;
+}
+.formulario__title {
+	text-align: center;
+	font-size: 22px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	border-bottom: 3px solid var(--color-texto-dark);
+	outline: none;
+}
+.formulario__datos {
+	width: 100%;
+	margin-bottom: 5px;
+}
+.formulario label {
+	font-size: 15px;
+	font-style: italic;
+	font-weight: 400;
+	display: block;
+	width: 100%;
+}
+.formulario input,
+.formulario select {
+	display: block;
+	width: 100%;
+	padding: 5px;
+}
+
+.boxbtn {
+	width: 50%;
+	height: 40px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.boxbtn__btn {
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	transition: all 0.5s ease-in;
+	color: var(--color-gris);
+	background-color: var(--color-texto-dark);
+}
+.boxbtn__btn:hover {
+	cursor: pointer;
+	background-color: var(--color-texto-light);
 }
 
 /* Estilos footer */
@@ -84,7 +131,7 @@
 	margin-right: 5px;
 }
 
-.footer__acerca {
+.footer__acerca{
 	margin-bottom: 10px;
 }
 
@@ -124,6 +171,7 @@
 		justify-content: flex-start;
 		flex-direction: column;
 		padding: px 0;
+		
 	}
 	.encabezado__title {
 		font-size: 30px;
@@ -143,59 +191,100 @@
 	.section {
 		width: 75%;
 	}
-
-	.footer {
-		display: flex;
-		padding-bottom: 3px;
+	.formulario__title {
+		font-size: 25px;
+		margin-bottom: 22px;
+		border-bottom: 5px solid var(--color-texto-dark);
 	}
-	.footer__acerca {
+	.formulario__datos {
+		margin-bottom: 8px;
+	}
+	.formulario label {
+		font-size: 16px;
+	}
+	.formulario input,
+	.formulario select {
+		padding: 7px;
+	}
+	.boxbtn {
+		width: 60%;
+		height: 55px;
+		margin-top: 30px;
+	}
+	.footer{
+		display: flex;
+		padding-bottom: 3px;	
+	}
+	.footer__acerca{
 		width: 50%;
 	}
-	.footer__contacto {
+	.footer__contacto{
 		width: 45%;
 	}
-	.footer__texto-acerca {
+	.footer__texto-acerca{
 		font-size: 14px;
 	}
 }
 
+
 /* Estilos para Tablets vertical*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-	.container {
+	.container{
 		min-height: 100vh;
 	}
-
+	
 	.encabezado {
 		width: 25%;
 	}
 	.section {
 		width: 75%;
 		display: flex;
-		flex-wrap: wrap;
+		flex-wrap: wrap;	
 	}
 
-	.footer {
+	.formulario__title {
+		font-size: 25px;
+		margin-bottom: 22px;
+		border-bottom: 5px solid var(--color-texto-dark);
+	}
+	.formulario__datos {
+		margin-bottom: 8px;
+	}
+	.formulario label {
+		font-size: 16px;
+	}
+	.formulario input,
+	.formulario select {
+		padding: 7px;
+	}
+	.boxbtn {
+		width: 60%;
+		height: 55px;
+		margin-top: 30px;
+	}
+	.footer{
 		align-self: flex-end;
 		width: 100%;
 	}
-	.footer__acerca {
+	.footer__acerca{
 		width: 50%;
 	}
-	.footer__contacto {
+	.footer__contacto{
 		width: 45%;
 	}
-	.footer__texto-acerca {
+	.footer__texto-acerca{
 		font-size: 14px;
 	}
 }
 
+
 /* Estilos para Medium-Desktops */
-@media only screen and (min-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-width: 1024px) and (orientation: landscape){
 	.encabezado {
 		width: 30%;
 	}
 
-	.encabezado__imagen {
+	.encabezado__imagen{
 		height: 250px;
 	}
 
@@ -220,13 +309,50 @@
 		display: flex;
 		flex-wrap: wrap;
 	}
-
-	.footer {
+	.formulario {
+		width: 80%;
+	}
+	.formulario__title {
+		font-size: 28px;
+		margin-bottom: 25px;
+	}
+	.formulario__datos {
+		margin-bottom: 10px;
+	}
+	.formulario label {
+		font-size: 18px;
+	}
+	.formulario input,
+	.formulario select {
+		padding: 10px;
+	}
+	.footer{
 		align-self: flex-end;
 		width: 100%;
 	}
+
 }
 
 /* Estilos para Large-Desktops */
 @media only screen and (min-width: 1680px) and (orientation: landscape) {
+	.formulario {
+		width: 80%;
+	}
+	.formulario__title {
+		font-size: 32px;
+		margin-bottom: 25px;
+	}
+	.formulario__datos {
+		margin-bottom: 10px;
+	}
+	.formulario label {
+		font-size: 20px;
+	}
+	.formulario input,
+	.formulario select {
+		padding: 10px;
+	}
+	.boxbtn__btn {
+		font-size: 20px;
+	}
 }
