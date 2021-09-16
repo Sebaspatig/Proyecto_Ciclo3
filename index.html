@@ -6,39 +6,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="css/estilos.css" />
+     <!-- Conexion al tipo de fuente de texto a utilizar -->
+    <link
+    href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;600&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+        rel="stylesheet"
+    />
+    <!-- Conexion a la libreria de iconos -->
+    <script
+        src="https://kit.fontawesome.com/6fc7def821.js"
+        crossorigin="anonymous"
+    ></script>
+
 </head>
 
 <body>
+    <div class="container">
+        <header class="encabezado">
+            <div class="encabezado__logo" id="logo">
+                <img src="imgs/logofooter.png" alt="imagen logo" class="encabezado__imagen">
+                <h3 class="encabezado__title">MisionTic 2020</h3>
+                <br>
+                <h6 class="encabezado__subtitle">Oportunidad para conformar equipo</h6>
+            </div>
+        </header>
 
-    
-    <form action="" id="form-registro" action="registro.html" method="post">
-        <h3>Registro</h3>
-    
-        <label for="pregunta">Tipo de documento</label><br>
-        <select id="tdocumento" name="tdocumento">
-            <option value="cedula">Cedula de ciudadania</option>
-            <option value="taridentidad">Tarjeta de identidad</option>
-            <option value="regcivil">Registro civil</option>
-            <option value="cedulaextra">Cedula de extranjeria</option>
-            <option value="pasaporte">Pasaporte</option>
-        </select>
-        
-        <label for="numerodocumento">Número de documento</label><br>
-        <input type="text" name="numerodocumento" id="numerodocumento" size="19" placeholder="1000000000"><br>
-        <div>
-            <label for="correo">Correo</label>
-            <input type="email" name="correo" id="correo">
-        </div>
-        <div>
-            <label for="contrasena">Contraseña</label>
-            <input type="password" name="contrasena" id="contrasena">
-        </div>
-        <div>
-            <button id="btn-registrar">Registrar</button>
-        </div>
-    </form>
+        <div class="section">
+            <form id="form-registro" action="registro.html" method="post">
+                <h4 class="formulario__title">Registro</h4>    
+                <div class="formulario__datos">
+                    <label for="tipo_documento">Tipo de documento</label>
+                    <select id="tipo_documento" name="">
+                        <option value="cedula">Cedula de ciudadania</option>
+                        <option value="taridentidad">Tarjeta de identidad</option>
+                        <option value="regcivil">Registro civil</option>
+                        <option value="cedulaextra">Cedula de extranjeria</option>
+                        <option value="pasaporte">Pasaporte</option>
+                    </select>
+                </div>
+                <div class="formulario__datos">
+                <label for="numero_documento">Número de documento</label>
+                <input type="text" name="numero_documento" id="numero_documento" size="19" placeholder="123456789">
+                </div>
+                <div>
+                    <label for="correo">Correo</label>
+                    <input type="email" name="correo" id="correo">
+                </div>
+                <div>
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" name="contrasena" id="contrasena">
+                </div>
+                <div>
+                    <button id="btn-registrar">Registrar</button>
+                </div>
+            </form>
+        </div>        
+    </div>
 </body>
 </html>
