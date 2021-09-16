@@ -1,44 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Registro</title>
+		<link rel="stylesheet" href="css/estilos.css" />
+		<!-- Conexion al tipo de fuente de texto a utilizar -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Conexion a la libreria de iconos -->
+		<script
+			src="https://kit.fontawesome.com/6fc7def821.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    
-</head>
+	<body>
+		<div class="container">
+			<form action="" id="form-registro" action="registro.html" method="post">
+				<h3>Registro</h3>
 
-<body>
+				<label for="pregunta">Tipo de documento</label><br />
+				<select id="tdocumento" name="tdocumento">
+					<option value="cedula">Cedula de ciudadania</option>
+					<option value="taridentidad">Tarjeta de identidad</option>
+					<option value="regcivil">Registro civil</option>
+					<option value="cedulaextra">Cedula de extranjeria</option>
+					<option value="pasaporte">Pasaporte</option>
+				</select>
 
-    
-    <form action="" id="form-registro" action="registro.html" method="post">
-        <h3>Registro</h3>
-    
-        <label for="pregunta">Tipo de documento</label><br>
-        <select id="tdocumento" name="tdocumento">
-            <option value="cedula">Cedula de ciudadania</option>
-            <option value="taridentidad">Tarjeta de identidad</option>
-            <option value="regcivil">Registro civil</option>
-            <option value="cedulaextra">Cedula de extranjeria</option>
-            <option value="pasaporte">Pasaporte</option>
-        </select>
-        
-        <label for="numerodocumento">Número de documento</label><br>
-        <input type="text" name="numerodocumento" id="numerodocumento" size="19" placeholder="1000000000"><br>
-        <div>
-            <label for="correo">Correo</label>
-            <input type="email" name="correo" id="correo">
-        </div>
-        <div>
-            <label for="contrasena">Contraseña</label>
-            <input type="password" name="contrasena" id="contrasena">
-        </div>
-        <div>
-            <button id="btn-registrar">Registrar</button>
-        </div>
-    </form>
-</body>
+				<label for="numerodocumento">Número de documento</label><br />
+				<input
+					type="text"
+					name="numerodocumento"
+					id="numerodocumento"
+					size="19"
+					placeholder="1000000000"
+				/><br />
+
+				<div class="formulario__datos">
+					<label class="formulario__label" for="correo">Correo</label>
+					<input class="formulario__input" type="email" name="correo" id="correo" />
+				</div>
+				<div class="formulario__datos">
+					<label class="formulario__label" for="contrasena">Contraseña</label>
+					<input
+						class="formulario__input"
+						type="password"
+						name="contrasena"
+						id="contrasena"
+					/>
+				</div>
+				<div class="boxbtn">
+					<button id="btn-registrar" class="boxbtn__btn">Registrar</button>
+				</div>
+			</form>
+
+			<footer class="footer" id="footer">
+				<div class="footer__acerca">
+					<h3 class="footer__title">¿Quienes somos?</h3>
+					<p class="footer__texto-acerca">
+						Somos un grupo de desarrollo web <br />
+						que presta servicio de ...
+					</p>
+				</div>
+				<div class="footer__contacto">
+					<h3 class="footer__title">Contactenos</h3>
+					<p class="footer__texto">
+						<i class="far fa-envelope footer__icon"></i>soporte.grupo4@gmail.com
+					</p>
+				</div>
+			</footer>
+		</div>
+	</body>
 </html>
