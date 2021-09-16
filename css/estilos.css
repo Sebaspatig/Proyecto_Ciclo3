@@ -24,7 +24,7 @@
 /*----------------- ESTILOS GENERALES -----------------*/
 
 /* Estilo container */
-.container{
+.container {
 	min-height: 100vh;
 	/* overflow: hidden; */
 }
@@ -49,21 +49,33 @@
 	/* text-align: center; */
 }
 
-.encabezado__subtitle{
+.encabezado__subtitle {
 	font-size: 10px;
 	font-family: "Source Sans Pro", sans-serif;
 	font-weight: 600;
 	text-align: center;
 }
 
-.encabezado__imagen{
+.encabezado__imagen {
 	height: 100px;
+}
+
+.social {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	right: 5px;
+	bottom: 0;
+}
+.social__icon {
+	color: var(--color-texto-dark);
+	font-size: 24px;
 }
 
 /* Estilos para el contenedor del cuerpo de la pagina */
 .section {
 	width: 100%;
-
 }
 /* Estilos para el Formulario */
 .formulario {
@@ -131,7 +143,7 @@
 	margin-right: 5px;
 }
 
-.footer__acerca{
+.footer__acerca {
 	margin-bottom: 10px;
 }
 
@@ -160,6 +172,12 @@
 	}
 }
 
+@media only screen and (min-width: 580px) and (orientation: landscape) {
+	.social__icon {
+		font-size: 18px;
+	}
+}
+
 /* Estilos para Tablets */
 @media only screen and (min-width: 768px) {
 	.encabezado {
@@ -170,8 +188,7 @@
 		display: flex;
 		justify-content: flex-start;
 		flex-direction: column;
-		padding: px 0;
-		
+		padding: 15px 0;
 	}
 	.encabezado__title {
 		font-size: 30px;
@@ -187,7 +204,17 @@
 		text-align: center;
 		/* text-align: center; */
 	}
-
+	.social {
+		width: 25%;
+		flex-direction: row;
+		left: 0px;
+		bottom: 20px;
+		justify-content: space-evenly;
+	}
+	.social__icon {
+		font-size: 25px;
+		color: var(--color-gris);
+	}
 	.section {
 		width: 75%;
 	}
@@ -211,35 +238,34 @@
 		height: 55px;
 		margin-top: 30px;
 	}
-	.footer{
+	.footer {
 		display: flex;
-		padding-bottom: 3px;	
+		padding-bottom: 3px;
 	}
-	.footer__acerca{
+	.footer__acerca {
 		width: 50%;
 	}
-	.footer__contacto{
+	.footer__contacto {
 		width: 45%;
 	}
-	.footer__texto-acerca{
+	.footer__texto-acerca {
 		font-size: 14px;
 	}
 }
 
-
 /* Estilos para Tablets vertical*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-	.container{
+	.container {
 		min-height: 100vh;
 	}
-	
+
 	.encabezado {
 		width: 25%;
 	}
 	.section {
 		width: 75%;
 		display: flex;
-		flex-wrap: wrap;	
+		flex-wrap: wrap;
 	}
 
 	.formulario__title {
@@ -262,29 +288,28 @@
 		height: 55px;
 		margin-top: 30px;
 	}
-	.footer{
+	.footer {
 		align-self: flex-end;
 		width: 100%;
 	}
-	.footer__acerca{
+	.footer__acerca {
 		width: 50%;
 	}
-	.footer__contacto{
+	.footer__contacto {
 		width: 45%;
 	}
-	.footer__texto-acerca{
+	.footer__texto-acerca {
 		font-size: 14px;
 	}
 }
 
-
 /* Estilos para Medium-Desktops */
-@media only screen and (min-width: 1024px) and (orientation: landscape){
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
 	.encabezado {
 		width: 30%;
 	}
 
-	.encabezado__imagen{
+	.encabezado__imagen {
 		height: 250px;
 	}
 
@@ -303,7 +328,9 @@
 		text-align: center;
 		/* text-align: center; */
 	}
-
+	.social {
+		width: 30%;
+	}
 	.section {
 		width: 70%;
 		display: flex;
@@ -326,11 +353,10 @@
 	.formulario select {
 		padding: 10px;
 	}
-	.footer{
+	.footer {
 		align-self: flex-end;
 		width: 100%;
 	}
-
 }
 
 /* Estilos para Large-Desktops */
