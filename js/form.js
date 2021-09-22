@@ -1,12 +1,12 @@
-//Array whit all inputs flieds
+//Array with all inputs fields
 const inputs = document.querySelectorAll("#form-registro input")
 
-//object whit regular expresions to evaluate inputs
+//object with regular expressions to validate inputs
 const regex = {
     correo: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
 }
 
-//function compare value whit regex an return boolean value
+//function to compare value with regex and return boolean value
 function checkCorreo(valor) {
     return regex.correo.test(valor)
 }
