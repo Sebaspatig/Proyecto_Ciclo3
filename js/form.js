@@ -1,4 +1,3 @@
-
 //Array with all inputs fields
 const inputs = document.querySelectorAll("#form-registro input")
 
@@ -30,3 +29,4 @@ inputs.forEach((input) => {
     input.addEventListener('blur', validateForm)
 })
 
+module.exports = checkCorreo; //Export for the challenge
