@@ -1,3 +1,4 @@
+
 //Array with all inputs fields
 const inputs = document.querySelectorAll("#form-registro input")
 
@@ -28,3 +29,4 @@ inputs.forEach((input) => {
     input.addEventListener('keyup', validateForm)
     input.addEventListener('blur', validateForm)
 })
+
