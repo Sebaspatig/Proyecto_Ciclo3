@@ -6,116 +6,92 @@ Jorge Tordecilla -->
 
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Registro</title>
-		<link rel="stylesheet" href="css/estilos.css" />
-		<!-- Conexion al tipo de fuente de texto a utilizar -->
-		<link
-			href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;600&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Source+Sans+Pro:wght@300;400;600&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- Conexion a la libreria de iconos -->
-		<script
-			src="https://kit.fontawesome.com/6fc7def821.js"
-			crossorigin="anonymous"
-		></script>
-	</head>
 
-	<body>
-		<div class="container">
-			<header class="encabezado">
-				<div class="encabezado__logo" id="logo">
-					<img src="imgs/logofooter.png" alt="imagen logo" class="encabezado__imagen" />
-					<h3 class="encabezado__title">MisionTic 2020</h3>
-					<br />
-					<h6 class="encabezado__subtitle">Oportunidad para conformar equipo</h6>
-				</div>
-			</header>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <!-- Conexion al tipo de fuente de texto a utilizar -->
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
+    <!-- Conexion a la libreria de iconos -->
+    <script src="https://kit.fontawesome.com/6fc7def821.js" crossorigin="anonymous"></script>
+</head>
 
-			<div class="section">
-				<form id="form-registro" action="registro.html" method="post" class="formulario">
-					<h4 class="formulario__title">Registro</h4>
-					<div class="formulario__datos">
-						<label for="tipo_documento">Tipo de documento</label>
-						<select id="tipo_documento" name="">
+<body>
+    <div class="container">
+        <header class="encabezado">
+            <div class="encabezado__logo" id="logo">
+                <img src="imgs/logofooter.png" alt="imagen logo" class="encabezado__imagen" />
+                <h3 class="encabezado__title">MisionTic 2020</h3>
+                <br />
+                <h6 class="encabezado__subtitle">Oportunidad para conformar equipo</h6>
+            </div>
+        </header>
+
+        <div class="section">
+            <form id="form-registro" action="registro.html" method="post" class="formulario">
+                <h4 class="formulario__title">Registro</h4>
+                <div class="formulario__datos">
+                    <label for="tipo_documento">Tipo de documento</label>
+                    <select id="tipo_documento" name="tipo_documento">
 							<option value="cedula">Cedula de ciudadania</option>
 							<option value="taridentidad">Tarjeta de identidad</option>
 							<option value="regcivil">Registro civil</option>
 							<option value="cedulaextra">Cedula de extranjeria</option>
 							<option value="pasaporte">Pasaporte</option>
 						</select>
-					</div>
-					<div class="formulario__datos">
-						<label for="numero_documento">Número de documento</label>
-						<input
-							type="text"
-							name="numero_documento"
-							id="numero_documento"
-							size="19"
-							placeholder="123456789"
-						/>
-					</div>
-					<div class="formulario__datos">
-						<label class="formulario__label" for="correo">Correo</label>
-						<input
-							class="formulario__input"
-							type="email"
-							name="correo"
-							id="correo"
-							placeholder="name@example.com"
-						/>
-					</div>
-					<div class="formulario__datos">
-						<label class="formulario__label" for="contrasena">Contraseña</label>
-						<input
-							class="formulario__input"
-							type="password"
-							name="contrasena"
-							id="contrasena"
-							placeholder="******"
-						/>
-					</div>
-					<div class="boxbtn">
-						<button id="btn-registrar" class="boxbtn__btn">Registrar</button>
-					</div>
-				</form>
+                </div>
+                <div class="formulario__datos">
+                    <label for="numero_documento">Número de documento</label>
+                    <input type="text" name="numero_documento" id="numero_documento" size="19" placeholder="123456789" />
+                </div>
+                <div class="formulario__datos">
+                    <label class="formulario__label" for="correo">Correo</label>
+                    <input class="formulario__input" type="email" name="correo" id="correo" placeholder="name@example.com" />
+                </div>
+                <div class="formulario__datos">
+                    <label class="formulario__label" for="contrasena">Contraseña</label>
+                    <input class="formulario__input" type="password" name="contrasena" id="contrasena" placeholder="******" />
+                </div>
+                <div class="boxbtn">
+                    <button id="btn-registrar" class="boxbtn__btn">Registrar</button>
+                </div>
+            </form>
 
-				<footer class="footer" id="footer">
-					<div class="footer__acerca">
-						<h3 class="footer__title">¿Quienes somos?</h3>
-						<p class="footer__texto-acerca">
-							Somos un grupo de desarrollo web <br />
-							que presta servicio de ...
-						</p>
-					</div>
-					<div class="footer__contacto">
-						<h3 class="footer__title">Contactenos</h3>
-						<p class="footer__texto">
-							<i class="far fa-envelope footer__icon"></i>soporte.grupo4@gmail.com
-						</p>
-					</div>
-				</footer>
-				<div class="social">
-					<!-- Iconos Sin fondo -->
-					<a href="" class="social__icon"><i class="fab fa-facebook-f"></i></a>
-					<a href="" class="social__icon"><i class="fab fa-instagram"></i></a>
-					<a href="" class="social__icon"><i class="fab fa-twitter"></i></a>
+            <footer class="footer" id="footer">
+                <div class="footer__acerca">
+                    <h3 class="footer__title">¿Quienes somos?</h3>
+                    <p class="footer__texto-acerca">
+                        Somos un grupo de desarrollo web <br /> que presta servicio de ...
+                    </p>
+                </div>
+                <div class="footer__contacto">
+                    <h3 class="footer__title">Contactenos</h3>
+                    <p class="footer__texto">
+                        <i class="far fa-envelope footer__icon"></i>soporte.grupo4@gmail.com
+                    </p>
+                </div>
+            </footer>
+            <div class="social">
+                <!-- Iconos Sin fondo -->
+                <a href="" class="social__icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="" class="social__icon"><i class="fab fa-instagram"></i></a>
+                <a href="" class="social__icon"><i class="fab fa-twitter"></i></a>
 
-					<!-- Iconos Con fondo Oscuro -->
-					<!-- <a href="" class="social__icon"><i class="fab fa-twitter-square"></i></a>
+                <!-- Iconos Con fondo Oscuro -->
+                <!-- <a href="" class="social__icon"><i class="fab fa-twitter-square"></i></a>
                         <a href="" class="social__icon"><i class="fab fa-facebook-square"></i></a>
                         <a href="" class="social__icon"><i class="fab fa-instagram-square"></i></a> -->
-				</div>
-			</div>
-		</div>
-	</body>
+            </div>
+        </div>
+    </div>
+    <!--Link script for validate form fields-->
+    <script src="js/form.js"></script>
+</body>
+
 </html>
