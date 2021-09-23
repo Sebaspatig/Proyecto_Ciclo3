@@ -56,7 +56,7 @@ Jorge Tordecilla -->
 							<option value="pasaporte">Pasaporte</option>
 						</select>
 					</div>
-					<div class="formulario__datos">
+					<div class="formulario__datos" id="grupo__numero_documento">
 						<label for="numero_documento">Número de documento</label>
 						<input
 							type="text"
@@ -66,25 +66,33 @@ Jorge Tordecilla -->
 							placeholder="123456789"
 						/>
 					</div>
-					<div class="formulario__datos">
+					<div class="formulario__datos" id="grupo__correo">
 						<label class="formulario__label" for="correo">Correo</label>
-						<input
+						<div class="formulario__grupo-input">
+							<input
 							class="formulario__input"
 							type="email"
 							name="correo"
 							id="correo"
 							placeholder="name@example.com"
-						/>
+							>
+							<i class="formulario__validacion-estado fas fa-times-circle"></i>
+						</div>
+						<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
 					</div>
-					<div class="formulario__datos">
+					<div class="formulario__datos" id="grupo__contrasena">
 						<label class="formulario__label" for="contrasena">Contraseña</label>
-						<input
+						<div class="formulario__grupo-input">
+							<input
 							class="formulario__input"
 							type="password"
 							name="contrasena"
 							id="contrasena"
 							placeholder="**********"
-						/>
+							/>
+							<i class="formulario__validacion-estado fas fa-times-circle"></i>
+						</div>
+						<p class="formulario__input-error">La contraseña tiene que ser de mínimo 8 digitos, contener una letra mínuscula, una letra mayúscula y un número</p>
 					</div>
 					<div class="boxbtn">
 						<button id="btn-registrar" class="boxbtn__btn">Registrar</button>

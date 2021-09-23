@@ -9,6 +9,7 @@ const regex = {
 
 //function to compare value with regex(correo) and return boolean value
 function checkCorreo(valor) {
+	if (valor == "") return false;
 	return regex.correo.test(valor);
 }
 
@@ -22,11 +23,11 @@ function checkContrasena(valor) {
 const validateForm = (e) => {
 	switch (e.target.name) {
 		case "correo":
-			// let r = checkCorreo(e.target.value); //TODO remove const r only for testing out work
+			validarCampo(regex.correo, e.target, 'correo');
 			console.log(checkCorreo(e.target.value));
 			break;
 		case "contrasena":
-			//TODO remove const r only for testing out work
+			validarCampo(regex.clave, e.target, 'contrasena');
 			console.log(checkContrasena(e.target.value));
 			break;
 	}
@@ -35,8 +36,27 @@ const validateForm = (e) => {
 //add events for keyup and blur of the fields
 inputs.forEach((input) => {
 	input.addEventListener("keyup", validateForm);
-	input.addEventListener("blur", validateForm);
+	// input.addEventListener("blur", validateForm);
 });
+
+//function to see visible the validate status
+const validarCampo = (expresion, input, campo) => {
+	if(expresion.test(input.value)){
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		// campos[campo] = true;
+	} else {
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		// campos[campo] = false;
+	}
+}
 
 // EXPORTS MODULES
 
