@@ -7,20 +7,20 @@ const regex = {
 	clave: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/,
 	cedula: /^[\d]{8,10}$/, // 8 a 10 digitos
 	taridentidad: /^[\d]{10}$/, // 10 digitos
-	regcivil: /^[\d]{8}$/, // 4 a 12 digitos.
+	regcivil: /^[\d]{10}$/, // 10 digitos.
 	cedulaextra:  /^[\d]{6}$/,//6 digitos
-	pasaporte: /^[\w]{2}[\d]{8}$/, // 8 caracteres
+	pasaporte: /^[\w]{2}[\d]{6}$/, // 8 caracteres
 };
 
 //function to compare value with regex(correo) and return boolean value
 function checkCorreo(valor) {
-	if (valor == "") return false;
+	// if (valor == "") return false;
 	return regex.correo.test(valor);
 }
 
 //function to compare value with regex(clave) and return boolean value
 function checkContrasena(valor) {
-	if (valor == "") return false;
+	// if (valor == "") return false;
 	return regex.clave.test(valor);
 }
 
@@ -28,16 +28,17 @@ function checkContrasena(valor) {
 function checkNumDocumento(valor, tipo){
 	switch(tipo){
 		case "cedula":
-			return regex.cedula
+			return regex.cedula;
 		case "taridentidad":
-			return regex.taridentidad.test(valor)
+			return regex.taridentidad;
 		case "regcivil":
-			return regex.regcivil.test(valor)
+			return regex.regcivil;
 		case "cedulaextra":
-			return regex.cedulaextra.test(valor)
+			return regex.cedulaextra;
 		case "pasaporte":
-			return regex.pasaporte.test(valor)
-
+			return regex.pasaporte;
+		default:
+			return regex.documento.test(valor);
 	}
 
 }
@@ -60,6 +61,8 @@ const validateForm = (e) => {
 			validarCampo(validocument, e.target,'numero_documento')
 	}
 };
+
+
 
 //add events for keyup and blur of the fields
 inputs.forEach((input) => {
@@ -87,6 +90,8 @@ const validarCampo = (expresion, input, campo) => {
 }
 
 // EXPORTS MODULES
+module.exports = {checkCorreo, checkContrasena,checkNumDocumento};
 
-// module.exports = checkCorreo;
-// module.exports = checkContrasena;
+
+// module.exports = {checkCorreo, checkContrasena,checkNumDocumento};
+
