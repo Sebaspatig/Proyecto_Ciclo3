@@ -38,7 +38,7 @@ function checkNumDocumento(valor, tipo){
 		case "pasaporte":
 			return regex.pasaporte;
 		default:
-			return regex.documento.test(valor);
+			return regex.cedula.test(valor);
 	}
 
 }
