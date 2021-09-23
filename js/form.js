@@ -5,6 +5,10 @@ const inputs = document.querySelectorAll("#form-registro input");
 const regex = {
 	correo: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
 	clave: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/,
+	documento:/^\d{8,10}$/,
+	documentoTI:/^\d{10,10}$/,
+    pasaporte:/^[a-zA-Z0-9]{8,8}$/,
+    cedulaex:/^\d{6,7}$/
 };
 
 //function to compare value with regex(correo) and return boolean value
@@ -19,6 +23,25 @@ function checkContrasena(valor) {
 	return regex.clave.test(valor);
 }
 
+function checkNumDocumento (valor, tipo) {
+	console.log(tipo);
+	switch (tipo){
+        case "cedula":
+            return regex.documento;
+
+        case "taridentidad":
+            return regex.documentoTI;
+        case "regcivil":
+            return regex.documentoTI;
+        case "pasaporte":
+            return regex.pasaporte;
+        case "cedulaextra":
+            return regex.cedulaex;
+		default:
+			return regex.documento.test(valor);
+    }
+}
+
 //function for check out all the fields
 const validateForm = (e) => {
 	switch (e.target.name) {
@@ -30,8 +53,16 @@ const validateForm = (e) => {
 			validarCampo(regex.clave, e.target, 'contrasena');
 			console.log(checkContrasena(e.target.value));
 			break;
+		case "numero_documento":
+			const tipo=document.getElementById("tipo_documento");
+			const expres=checkNumDocumento(e.target.value,tipo.value);
+			validarCampo(expres, e.target, 'numero_documento');
+			console.log(expres.test(e.target.value));
+			break;
 	}
 };
+
+
 
 //add events for keyup and blur of the fields
 inputs.forEach((input) => {
@@ -60,5 +91,5 @@ const validarCampo = (expresion, input, campo) => {
 
 // EXPORTS MODULES
 
-// module.exports = checkCorreo;
-// module.exports = checkContrasena;
+// module.exports = {checkCorreo, checkContrasena,checkNumDocumento};
+

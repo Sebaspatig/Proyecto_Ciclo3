@@ -58,13 +58,18 @@ Jorge Tordecilla -->
 					</div>
 					<div class="formulario__datos" id="grupo__numero_documento">
 						<label for="numero_documento">Número de documento</label>
-						<input
-							type="text"
-							name="numero_documento"
-							id="numero_documento"
-							size="19"
-							placeholder="123456789"
-						/>
+						<div class="formulario__grupo-input">
+							<input
+								type="text"
+								class="formulario__input"
+								name="numero_documento"
+								id="numero_documento"
+								size="19"
+								placeholder="123456789"
+							/>
+							<i class="formulario__validacion-estado fas fa-times-circle"></i>
+						</div>
+						<p class="formulario__input-error">El documento ingresado no es correcto</p>
 					</div>
 					<div class="formulario__datos" id="grupo__correo">
 						<label class="formulario__label" for="correo">Correo</label>
