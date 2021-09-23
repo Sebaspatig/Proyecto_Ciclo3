@@ -93,8 +93,5 @@ const validarCampo = (expresion, input, campo) => {
 module.exports = {checkCorreo, checkContrasena,checkNumDocumento};
 
 
-<<<<<<< HEAD
 // module.exports = {checkCorreo, checkContrasena,checkNumDocumento};
 
-=======
->>>>>>> bf26b54 (Se corrige funcionalidad de validacion de documentos y tambien se corrige el module.export)
