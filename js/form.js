@@ -2,13 +2,14 @@
 const inputs = document.querySelectorAll("#form-registro input");
 
 //object with regular expressions to validate inputs
-const regex = {
+const regex = { 
 	correo: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
 	clave: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/,
-	documento:/^\d{8,10}$/,
-	documentoTI:/^\d{10,10}$/,
-    pasaporte:/^[a-zA-Z0-9]{8,8}$/,
-    cedulaex:/^\d{6,7}$/
+	cedula: /^[\d]{8,10}$/, // 8 a 10 digitos
+	taridentidad: /^[\d]{10}$/, // 10 digitos
+	regcivil: /^[\d]{8}$/, // 4 a 12 digitos.
+	cedulaextra:  /^[\d]{6}$/,//6 digitos
+	pasaporte: /^[\w]{2}[\d]{8}$/, // 8 caracteres
 };
 
 //function to compare value with regex(correo) and return boolean value
@@ -54,11 +55,10 @@ const validateForm = (e) => {
 			console.log(checkContrasena(e.target.value));
 			break;
 		case "numero_documento":
-			const tipo=document.getElementById("tipo_documento");
-			const expres=checkNumDocumento(e.target.value,tipo.value);
-			validarCampo(expres, e.target, 'numero_documento');
-			console.log(expres.test(e.target.value));
-			break;
+			const tipodocumento=document.getElementById("tipo_documento")
+			const validocument = checkNumDocumento(e.target.value, tipodocumento.value)
+			console.log(validocument)
+			validarCampo(validocument, e.target,'numero_documento')
 	}
 };
 
