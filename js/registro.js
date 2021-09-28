@@ -23,6 +23,7 @@ function agregarRegistro(tipo_doc,num_doc,correo,contrasena){
     // var correo=document.getElementById("correo").value;
     // var contrasena=document.getElementById("contrasena").value;
     
+
     var usuario=new Registro(usercount,tipo_doc,num_doc,correo,contrasena);
 
     // var usuario=new Registro(usercount,tipo_doc,num_doc,correo,"pass1234");
@@ -78,7 +79,7 @@ function ordenarArreglo2(arreglo){
 
 /*Modulo exports*/
                 
-// module.exports={obtenerRegPasaporte,ordenarArreglo}
+module.exports={obtenerRegPasaporte,ordenarArreglo}
                 
 function filtrar(){
     console.log(obtenerRegPasaporte(users))
