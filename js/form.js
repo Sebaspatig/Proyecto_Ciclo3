@@ -90,7 +90,7 @@ const validarCampo = (expresion, input, campo) => {
 }
 
 // EXPORTS MODULES
-module.exports = {checkCorreo, checkContrasena,checkNumDocumento};
+// module.exports = {checkCorreo, checkContrasena,checkNumDocumento};
 
 
 // module.exports = {checkCorreo, checkContrasena,checkNumDocumento};

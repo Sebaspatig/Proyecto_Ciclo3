@@ -44,7 +44,7 @@ Jorge Tordecilla -->
 			
 
 			<div class="section">
-				<form id="form-registro" action="registro.html" method="post" class="formulario">
+				<form id="form-registro" class="formulario" action="#" method="">
 					<h4 class="formulario__title">Registro</h4>
 					<div class="formulario__datos">
 						<label for="tipo_documento">Tipo de documento</label>
@@ -100,7 +100,8 @@ Jorge Tordecilla -->
 						<p class="formulario__input-error">La contraseña tiene que ser de mínimo 8 digitos, contener una letra mínuscula, una letra mayúscula y un número</p>
 					</div>
 					<div class="boxbtn">
-						<button id="btn-registrar" class="boxbtn__btn">Registrar</button>
+						<button id="btn-registrar" class="boxbtn__btn" onclick="agregarRegistro()" type="button">Registrar</button>
+						<button id="btn-filtrar" class="boxbtn__btn" onclick="filtrar()" type="button">Filtrar passport</button>
 					</div>
 				</form>
 
@@ -134,5 +135,6 @@ Jorge Tordecilla -->
 		</div>
 		<!--link js file-->
 		<script src="js/form.js"></script>
+		<script src="js/registro.js"></script>
 	</body>
 </html>
