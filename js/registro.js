@@ -1,89 +1,35 @@
-users = [];
-let usercount = 0;
+var registros = []
 
-
-/* Esta funcion crea el arreglo de objetos de los registros que se van agregando
- */
-function agregarRegistro(tipo_doc, num_doc, correo, contrasena) {
-    /**
-     * Este es el contructor que permitira la creacion del objeto usuario
+function Registro(tipo_documento, numero_documento, correo, contrasena) {
+    /** 
+     * Sumary: Funtion Resgistro constructor para crear objetos de tipos Usuario
      */
-    function Registro(id, tipo_documento, numero_documento, correo, contrasena) {
-        this.id = id;
-        this.tipo_documento = tipo_documento;
-        this.numero_documento = numero_documento;
-        this.correo = correo;
-        this.contrasena = contrasena;
-    }
-
-    // var tipo_doc=document.getElementById("tipo_documento").value;
-    // var num_doc=document.getElementById("numero_documento").value;
-    // var correo=document.getElementById("correo").value;
-    // var contrasena=document.getElementById("contrasena").value;
-
-
-    var usuario = new Registro(usercount, tipo_doc, num_doc, correo, contrasena);
-
-    // var usuario=new Registro(usercount,tipo_doc,num_doc,correo,"pass1234");
-
-    usercount += 1;
-    users.push(usuario);
+    this.tipo_documento = tipo_documento;
+    this.num_documento = numero_documento;
+    this.correo = correo;
+    this.contrasena = contrasena;
 }
 
-/**
- * Esta funcion filtra el arreglo de onjetos de registro por el tipo de documento en este caso el pasaporte
- * @param {Array} users arreglo de objetos del registro
- * @returns el arreglo filtrado
- */
-function obtenerRegPasaporte(arreglo) {
-    const registroPasaporte = arreglo.filter(user => {
-        return user.tipo_documento === "pasaporte"
-    });
-    console.table(registroPasaporte);
-    return registroPasaporte;
+function agregarRegistro() {
+    /**
+     *Sumary: Esta funcion agrega usuarios nuevos desde los valores de form y  los inserta en el array registro
+     */
+    var tipo_doc = document.getElementById("tipo-documento").value;
+    var num_doc = document.getElementById("numero-documento").value;
+    var correo = document.getElementById("correo").value;
+    var contrasena = document.getElementById("contrasena").value;
+    var usuario = new Registro(tipo_doc, num_doc, correo, contrasena);
+    registros.push(usuario);
+    console.table(usuario)
+    return registros
 }
 
-
-/**
- * Esta funcion ordena el arreglo de objetos de registro por numero de pasaporte en forma ascendente
- * @param {Array} users arreglo de objetos del registro
- * @returns el arreglo ordenado
- */
-function ordenarArreglo(arreglo) {
-    const sortArray = arreglo.sort(function(o1, o2) {
-        if (o1.numero_documento > o2.numero_documento) { //comparación lexicogŕafica
-            return 1;
-        } else if (o1.numero_documento < o2.numero_documento) {
-            return -1;
-        }
-        return 0;
-    });
-    console.table(sortArray)
-    return sortArray
-}
-
-// function ordenarArreglo2(arreglo) {
-//     ordenamiento = { pasaporte: 1, cedula: 2, taridentidad: 3, regcivil: 4, cedulaextra: 5 };
-
-//     var ordenado = arreglo.sort(function(o1, o2) {
-//         if (o1.numero_documento > o2.numero_documento) { //comparación lexicogŕafica
-//             return 1;
-//         } else if (o1.numero_documento < o2.numero_documento) {
-//             return -1;
-//         }
-//         return 0;
-//     });
-
-//     return ordenado.sort((
-//         (a, b) => ordenamiento[a.tipo_documento] - ordenamiento[b.tipo_documento]));
-// }
-
-/**
- * Esta funcion filtra el arreglo de objetos de registro por el valor de email
- * @param {Array} users arreglo de objetos del registro
- * @returns el arreglo filtrado por email
- */
 function filtrarCorreo(arreglo) {
+    /**
+     * Esta funcion filtra el arreglo de objetos de registro por correo que incluya "email.com"
+     * @param {Array} users arreglo de objetos del registro
+     * @returns el arreglo filtrado
+     */
     const filtrarCorreo = arreglo.filter((value) => {
         return value.correo.includes("email.com")
     })
@@ -91,27 +37,38 @@ function filtrarCorreo(arreglo) {
     return filtrarCorreo
 }
 
+function obtenerRegPasaporte(arreglo) {
+    /**
+     * Esta funcion filtra el arreglo de objetos de registro por el tipo de documento en este caso el pasaporte
+     * @param {Array} users arreglo de objetos del registro
+     * @returns el arreglo filtrado
+     */
+    const registroPasaporte = arreglo.filter(user => {
+        return user.tipo_documento === "P"
+    });
+    console.table(registroPasaporte);
+    return registroPasaporte;
+}
 
-/*Modulo exports*/
+function ordenarArreglo(arreglo) {
+    /**
+     * Esta funcion ordena los valores de los pasaporte y deja los demas en el sito en el cual fue insertado
+     * @param {Array} users arreglo de objetos del registro
+     * @returns el arreglo ordena
+     */
+    arreglo.forEach((i, indexI) => {
+        arreglo.forEach((j, indexJ, array) => {
+            if (i.tipo_documento === "P" && j.tipo_documento === "P") {
+                if (i.num_documento < j.num_documento) {
+                    var tempo = array[indexI]
+                    array[indexI] = array[indexJ]
+                    array[indexJ] = tempo
+                }
+            }
+        })
+    })
+    console.table(arreglo)
+    return arreglo
+}
 
-module.exports = { agregarRegistro, obtenerRegPasaporte, ordenarArreglo, filtrarCorreo }
-
-
-// function filtrar() {
-//     console.log(obtenerRegPasaporte(users))
-//     console.table(ordenarArreglo(users));
-//     // console.table(ordenarArreglo(obtenerRegPasaporte(users)));
-// }
-
-/** Valores de prueba */
-agregarRegistro("pasaporte", "AS123459", "prueba1@email.com", "pass1234")
-agregarRegistro("cedula", "1137600365", "prueba2@gmail.com", "pass1234")
-agregarRegistro("pasaporte", "AD123451", "prueba3@email.com", "pass1234")
-agregarRegistro("taridentidad", "1128449711", "prueba4@gmail.com", "pass1234")
-agregarRegistro("pasaporte", "AO123431", "prueba5@email.com", "pass1234")
-agregarRegistro("cedula", "1034567854", "prueba6@email.com", "pass1234")
-agregarRegistro("pasaporte", "AS023232", "prueba7@hotmail.com", "pass1234")
-
-
-ordenarArreglo(obtenerRegPasaporte(users))
-filtrarCorreo(users)
+module.exports = { agregarRegistro, obtenerRegPasaporte, ordenarArreglo, filtrarCorreo, registros };
