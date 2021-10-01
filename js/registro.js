@@ -1,7 +1,6 @@
 users = [];
 let usercount = 0;
 
-
 /* Esta funcion crea el arreglo de objetos de los registros que se van agregando
  */
 function agregarRegistro(tipo_doc, num_doc, correo, contrasena) {
@@ -15,19 +14,28 @@ function agregarRegistro(tipo_doc, num_doc, correo, contrasena) {
         this.correo = correo;
         this.contrasena = contrasena;
     }
-
     // var tipo_doc=document.getElementById("tipo_documento").value;
     // var num_doc=document.getElementById("numero_documento").value;
     // var correo=document.getElementById("correo").value;
     // var contrasena=document.getElementById("contrasena").value;
-
-
     var usuario = new Registro(usercount, tipo_doc, num_doc, correo, contrasena);
-
-    // var usuario=new Registro(usercount,tipo_doc,num_doc,correo,"pass1234");
-
     usercount += 1;
     users.push(usuario);
+    console.log(users)
+    return users
+}
+
+/**
+* Esta funcion filtra el arreglo de objetos de registro por el valor de email
+* @param {Array} users arreglo de objetos del registro
+* @returns el arreglo filtrado por email
+*/
+function filtrarCorreo(arreglo) {
+   const filtrarCorreo = arreglo.filter((value) => {
+       return value.correo.includes("email.com")
+   })
+//    console.table(filtrarCorreo)
+   return filtrarCorreo
 }
 
 /**
@@ -39,7 +47,7 @@ function obtenerRegPasaporte(arreglo) {
     const registroPasaporte = arreglo.filter(user => {
         return user.tipo_documento === "pasaporte"
     });
-    console.table(registroPasaporte);
+    // console.table(registroPasaporte);
     return registroPasaporte;
 }
 
@@ -58,9 +66,13 @@ function ordenarArreglo(arreglo) {
         }
         return 0;
     });
-    console.table(sortArray)
+    // console.table(sortArray)
     return sortArray
 }
+
+/*Modulo exports*/
+
+module.exports = { agregarRegistro, obtenerRegPasaporte, ordenarArreglo, filtrarCorreo }
 
 // function ordenarArreglo2(arreglo) {
 //     ordenamiento = { pasaporte: 1, cedula: 2, taridentidad: 3, regcivil: 4, cedulaextra: 5 };
@@ -77,24 +89,6 @@ function ordenarArreglo(arreglo) {
 //     return ordenado.sort((
 //         (a, b) => ordenamiento[a.tipo_documento] - ordenamiento[b.tipo_documento]));
 // }
-
-/**
- * Esta funcion filtra el arreglo de objetos de registro por el valor de email
- * @param {Array} users arreglo de objetos del registro
- * @returns el arreglo filtrado por email
- */
-function filtrarCorreo(arreglo) {
-    const filtrarCorreo = arreglo.filter((value) => {
-        return value.correo.includes("email.com")
-    })
-    console.table(filtrarCorreo)
-    return filtrarCorreo
-}
-
-
-/*Modulo exports*/
-
-module.exports = { agregarRegistro, obtenerRegPasaporte, ordenarArreglo, filtrarCorreo }
 
 
 // function filtrar() {
@@ -113,5 +107,5 @@ agregarRegistro("cedula", "1034567854", "prueba6@email.com", "pass1234")
 agregarRegistro("pasaporte", "AS023232", "prueba7@hotmail.com", "pass1234")
 
 
-ordenarArreglo(obtenerRegPasaporte(users))
 filtrarCorreo(users)
+ordenarArreglo(obtenerRegPasaporte(users))
