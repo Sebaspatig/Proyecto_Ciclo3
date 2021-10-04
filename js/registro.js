@@ -71,4 +71,5 @@ function ordenarArreglo(arreglo) {
     return arreglo
 }
 
+
 module.exports = { agregarRegistro, obtenerRegPasaporte, ordenarArreglo, filtrarCorreo, registros };
