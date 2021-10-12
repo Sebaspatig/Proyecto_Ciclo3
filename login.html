@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="from-login" action="#">
+      <div>
+        <label for="correo">correo</label>
+        <input type="email" name="correo" id="correo" value="mail@mail.com" />
+      </div>
+      <div>
+        <label for="contrasena">contraseña</label>
+        <input type="text" name="contrasena" id="contrasena" value="pass123" />
+      </div>
+      <div>
+        <label for="captcha">Cuanto es el 60% de 25</label>
+        <input type="number" name="captcha" id="captcha" value="15" />
+      </div>
+      <div>
+        <input type="button" value="Enviar" onclick="login()" />
+      </div>
+    </form>
+    <script src="js/login.js"></script>
+  </body>
+</html>
